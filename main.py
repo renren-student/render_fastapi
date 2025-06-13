@@ -41,10 +41,9 @@ def index():
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>埋め込みCSSとJSのサンプルサイト</title>
+        <title>サンプルサイト</title>
 
         <style>
-            /* ページ全体のスタイル */
             body {
                 font-family: 'Helvetica Neue', Arial, sans-serif;
                 line-height: 1.6;
@@ -54,7 +53,6 @@ def index():
                 padding: 20px;
             }
 
-            /* コンテンツを囲むコンテナのスタイル */
             .container {
                 max-width: 600px;
                 margin: 40px auto;
@@ -64,13 +62,11 @@ def index():
                 box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             }
 
-            /* 見出しのスタイル */
             h1 {
                 color: #1a73e8;
                 margin-bottom: 20px;
             }
 
-            /* ボタンのスタイル */
             button {
                 background-color: #1a73e8;
                 color: white;
@@ -82,18 +78,16 @@ def index():
                 transition: background-color 0.3s ease;
             }
 
-            /* ボタンにマウスを乗せたときのスタイル */
             button:hover {
                 background-color: #1558b8;
             }
 
-            /* メッセージ表示部分のスタイル */
             #message {
                 margin-top: 25px;
                 font-size: 18px;
                 font-weight: bold;
                 color: #d93025;
-                min-height: 25px; /* メッセージが変わってもレイアウトが崩れないように高さを確保 */
+                min-height: 25px; 
             }
         </style>
         </head>
@@ -109,16 +103,12 @@ def index():
         </div>
 
         <script>
-            // DOM（HTML要素）の読み込みが終わってからスクリプトを実行
             document.addEventListener('DOMContentLoaded', () => {
 
-                // IDを使ってHTML要素を取得
                 const myButton = document.getElementById('myButton');
                 const messageArea = document.getElementById('message');
 
-                // ボタンがクリックされたときの処理を定義
                 myButton.addEventListener('click', () => {
-                    // 配列からランダムにメッセージを選ぶ
                     const messages = [
                         "ようこそ！",
                         "ボタンが押されました！🎉",
@@ -128,7 +118,6 @@ def index():
                     ];
                     const randomIndex = Math.floor(Math.random() * messages.length);
                     
-                    // メッセージ表示エリアのテキストを変更
                     messageArea.textContent = messages[randomIndex];
                 });
 
